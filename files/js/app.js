@@ -34,6 +34,25 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
                 }
             });
         };
+        $rootScope.toogleMainMenu = function() {
+            $http({
+                url: "/logOut",
+                method: "POST"
+            }).success(function (data) {
+                if(data.error) {
+                    $rootScope.userData = {
+                        isLog : false
+                    };
+                    $scope.mainLoadingProcess = false;
+                }
+                else {
+                    $rootScope.userData = {
+                        isLog : false
+                    };
+                    $rootScope.getUser();
+                }
+            });
+        }
     }
 ]);
 app.controller("LoginCtrl", ['$http', '$scope', '$rootScope',
