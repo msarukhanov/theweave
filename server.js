@@ -2,15 +2,31 @@ var express = require('express');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var app = express();
+var redis = require('redis');
 
 mongoose = require('mongoose');
 
 var port = parseInt(process.env.PORT) || 901;
 
+var client = redis.createClient('//pub-redis-17412.us-east-1-2.1.ec2.garantiadata.com:17412', {no_ready_check: true});
+client.auth('mtukxdjMrI9biAno', function (err) { if (err) throw err; });
+
+function redisLog(type) {
+    return function () {
+        var arguments = (typeof arguments != 'undefined') ? arguments : '';
+        console.log(type, arguments);
+    }
+}
+client.on('connect', redisLog('Redis Connection Opened ...'));
+client.on('ready', redisLog('Redis Connection Ready ...'));
+client.on('reconnecting', redisLog('Redis Connection Reconnecting ... '));
+client.on('error', redisLog('Redis Connection Error ...'));
+client.on('end', redisLog('Redis Connection End ...'));
+//client.set("current_user", JSON.stringify({}), function(err, reply) {
+//    console.log('setting : ', err, reply);
+//});
 var dbURI = 'mongodb://theweave_server:phoenix11@ds025469.mlab.com:25469/heroku_dzkn8fvf';
-
 mongoose.connect(dbURI);
-
 mongoose.connection.on('connected', function () {
     console.log('Mongoose default connection open to ' + dbURI);
 });
@@ -31,16 +47,17 @@ app.use('/favicon.ico', express.static('./files/img/theweave.ico'));
 
 app.set('json spaces', 2);
 
-require('middleware/routes.js')(app, fs);
+require('middleware/routes.js')(app, fs, client);
 require('middleware/mongooseModels.js')(app, mongoose);
 
-regionsSchema = mongoose.model('regions', regionModel.region);
-region_ownersSchema = mongoose.model('region_owners', regionModel.region_owners);
-userSchema = mongoose.model('users', chatAccount);
+userSchema = mongoose.model('p_users', userAccount);
 
 var server = app.listen(port || 901, function() {
     console.log("listening on " + port);
 });
+
+
+
 
 var io  = require('socket.io').listen(server);
 

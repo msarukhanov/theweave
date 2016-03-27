@@ -1,0 +1,10 @@
+<div class="login-wrapper" ng-controller="LoginCtrl">
+    <form class="login-form" ng-submit="login()">
+        <div class="login-inner">
+            <input type="text" class="login-input" placeholder="Username" ng-model="loginData.login" required/>
+            <input type="password" class="login-input" placeholder="Password" ng-model="loginData.password" required/>
+        </div>
+        <span class="login-error" ng-if="errorText">{{errorText}}</span>
+        <input class="login-button" type="submit" value="Log In"/>
+    </form>
+</div>
