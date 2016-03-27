@@ -82,7 +82,7 @@ body {
    overflow-y: scroll; 
 }
 @media screen and (min-width: 667px) {
-   .main-wrapper {
+   .main-wrapper, body {
       max-width: 667px;
    }
 }

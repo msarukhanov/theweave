@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72bdb5a0-b141-4ef7-9b39-adc6db26180d" name="Default" comment="" />
+    <list default="true" id="72bdb5a0-b141-4ef7-9b39-adc6db26180d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/css/main_style.css" afterPath="$PROJECT_DIR$/files/css/main_style.css" />
+    </list>
     <ignored path="theweave.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -35,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/files/css/main_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.407408">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.5469293">
+              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -55,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logged-main.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="logged-main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/files/templates/logged-main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2361111">
+            <state vertical-scroll-proportion="-7.8461537">
               <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
               <folding>
                 <element signature="n#a#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -80,8 +82,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/files/index.html" />
-        <option value="$PROJECT_DIR$/files/css/main_style.css" />
         <option value="$PROJECT_DIR$/files/templates/logged-main.html" />
+        <option value="$PROJECT_DIR$/files/css/main_style.css" />
       </list>
     </option>
   </component>
@@ -257,14 +259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/css/main_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.407408">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -275,7 +269,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/templates/logged-main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2361111">
+        <state vertical-scroll-proportion="-7.8461537">
           <caret line="93" column="6" selection-start-line="93" selection-start-column="6" selection-end-line="93" selection-end-column="6" />
           <folding>
             <element signature="n#a#0;n#div#0;n#div#0;n#!!top" expanded="false" />
@@ -284,6 +278,14 @@
             <element signature="n#a#3;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#a#4;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/css/main_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5469293">
+          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
