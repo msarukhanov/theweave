@@ -50,7 +50,11 @@ app.set('json spaces', 2);
 require('middleware/routes.js')(app, fs, client);
 require('middleware/mongooseModels.js')(app, mongoose);
 
-userSchema = mongoose.model('p_users', userAccount);
+serverUsers = mongoose.model('p_users', schema.userAccount);
+serverSeasons = mongoose.model('p_seasons', schema.serverSeasons);
+serverServers = mongoose.model('p_servers', schema.serverServers);
+userCharacters = mongoose.model('u_characters', schema.userCharacters);
+npcCharacters = mongoose.model('p_npcs', schema.npcCharacters);
 
 var server = app.listen(port || 901, function() {
     console.log("listening on " + port);

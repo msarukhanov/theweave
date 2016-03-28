@@ -21,6 +21,50 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
         $rootScope.userData = {
             isLog : false
         };
+        $rootScope.getServers = function(searchData) {
+            $http({
+                url: "/getServers",
+                method: "POST",
+                data: searchData
+            }).success(function (data) {
+                console.log(data);
+            });
+        };
+        $rootScope.getSeasons = function(searchData) {
+            $http({
+                url: "/getSeasons",
+                method: "POST",
+                data: searchData
+            }).success(function (data) {
+                console.log(data);
+            });
+        };
+        $rootScope.getUserCharacters = function(searchData) {
+            $http({
+                url: "/getUserCharacters",
+                method: "POST",
+                data: searchData
+            }).success(function (data) {
+                console.log(data);
+            });
+        };
+        $rootScope.getNpcCharacters = function(searchData) {
+            $http({
+                url: "/getNpcCharacters",
+                method: "POST",
+                data: searchData
+            }).success(function (data) {
+                console.log(data);
+            });
+        };
+
+        $rootScope.getServers({});
+        $rootScope.getSeasons({});
+        $rootScope.getUserCharacters({});
+        $rootScope.getNpcCharacters({
+            "stats.name" : "Jack"
+        });
+
         $rootScope.mainLoadingProcess = true;
         $rootScope.getUser = function() {
             $http({
