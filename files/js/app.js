@@ -14,6 +14,9 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
             // get Available Games
             // get Current Characters
             $rootScope.mainLoadingProcess = false;
+            $rootScope.toogleMainMenu = function() {
+                if($rootScope.userData.isLog == true) $rootScope.mainMenuOpened = !$rootScope.mainMenuOpened;
+            }
         };
         $rootScope.userData = {
             isLog : false
@@ -24,7 +27,7 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
                 url: "/getUser",
                 method: "GET"
             }).success(function (data) {
-                if(data.error) {
+                if(data.error || !data.user_name) {
                     $rootScope.mainLoadingProcess = false;
                 }
                 else {
@@ -34,7 +37,7 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
                 }
             });
         };
-        $rootScope.toogleMainMenu = function() {
+        $rootScope.logOut = function() {
             $http({
                 url: "/logOut",
                 method: "POST"
@@ -46,13 +49,16 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
                     $scope.mainLoadingProcess = false;
                 }
                 else {
+                    $rootScope.toogleMainMenu();
                     $rootScope.userData = {
                         isLog : false
                     };
                     $rootScope.getUser();
                 }
             });
-        }
+        };
+        $rootScope.mainMenuOpened = false;
+
     }
 ]);
 app.controller("LoginCtrl", ['$http', '$scope', '$rootScope',

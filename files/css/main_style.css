@@ -142,6 +142,52 @@ body {
    color: red;
    margin: 3px 0;
 }
+.main-menu-wrapper {
+   position: absolute;
+   width: 100%;
+   height: calc(100% - 36px);
+   top: 36px;
+   left: 0;
+}
+.main-menu-opacity {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   background-color: black;
+   opacity: 0.2;
+   z-index: 20;
+}
+.main-menu-list {
+   position: absolute;
+   width: 200px;
+   height: 100%;
+   left: 0;
+   top: 0;
+   background-color: white;
+   z-index: 30;
+   margin: 0;
+   box-sizing: border-box;
+   border: 2px solid blue;
+   border-left: none;
+   list-style: none;
+   padding: 0;
+}
+.main-menu-item {
+   list-style: none;
+   padding: 5px 15px;
+   line-height: 32px;
+   display: inline-block;
+   box-sizing: border-box;
+   width: 100%;
+   border-bottom: 1px solid blue;
+}
+.main-menu-item-text {
+   float: left;
+}
+.main-menu-item svg {
+   float: right;
+}
 @media screen and (min-width: 667px) {
    .main-wrapper, body {
       max-width: 667px;
