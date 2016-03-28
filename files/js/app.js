@@ -93,7 +93,7 @@ app.controller("MainCtrl", ['$http', '$scope', '$rootScope',
                     $scope.mainLoadingProcess = false;
                 }
                 else {
-                    $rootScope.toogleMainMenu();
+                    $rootScope.mainMenuOpened = false;
                     $rootScope.userData = {
                         isLog : false
                     };
