@@ -43,7 +43,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use('/favicon.ico', express.static('./files/img/theweave.ico'));
+app.use('/favicon.ico', __dirname + '/files/img/theweave.ico'));
 
 app.set('json spaces', 2);
 
