@@ -43,7 +43,15 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.use('/favicon.ico', __dirname + '/files/img/theweave.ico'));
+app.use( function(req, res, next) {
+
+  if (req.originalUrl && req.originalUrl.split("/").pop() === 'favicon.ico') {
+    return res.sendStatus(204);
+  }
+
+  return next();
+
+});
 
 app.set('json spaces', 2);
 
